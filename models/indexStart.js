@@ -25,7 +25,7 @@ db.Sequelize = Sequelize
 db.sequelize = sequelize
 
 db.login = require('./loginModel.js')(sequelize,DataTypes);
-
+db.register = require('./registerModel.js')(sequelize,DataTypes)
 db.sequelize.sync({ force: false })
 .then(() =>{
     console.log('re-sync done')

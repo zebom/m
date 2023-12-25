@@ -9,11 +9,13 @@ var corOptions ={
 
 app.use(cors(corOptions));
 const loginRoute = require('./routes/loginRoutes')
+const registerRoute = require('./routes/registerRoutes')
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 app.use('/Login',loginRoute);
+app.use('/Register', registerRoute);
 
 app.use((req, res, next)=>{
     const  err = new Error("Not Found");
