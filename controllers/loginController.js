@@ -27,11 +27,16 @@ module.exports={
           const refreshToken = await signRefreshToken(userInstance.id)
 
         //   res.status(200).send(result)
-          res.status(200).send({accessToken, refreshToken})
+          res.status(200).send({accessToken,
+             refreshToken,
+             role: userInstance.userType
+            })
 
         }catch(error){
             if(error.isJoi === true) return next(createError.BadRequest('invalid Email/Password'))
             console.error('Error in user controller:', error);
+            console.log('User Type:', userInstance.userType);
+            console.log('User Type:', userInstance.userType);
             next(error)
         }
     },

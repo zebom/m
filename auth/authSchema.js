@@ -5,7 +5,7 @@ const authSchema =Joi.object({
     lastname: Joi.string().required(),
     email: Joi.string().email().required(),
     // number: Joi.string().pattern(/^(0|[1-9][0-9]{0,9})$/).required(),
-    number: Joi.string().required(),
+    number: Joi.number().required(),
 
     gender: Joi.string().required(),
     age: Joi.number().integer().positive().max(150).required(),

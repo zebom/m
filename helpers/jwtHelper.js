@@ -41,7 +41,7 @@ signRefreshToken: (UserId)=>{
         const options ={
             expiresIn:'1y',
             issuer:'EddTechnologies.com',
-            audience: UserId,
+            audience: 'UserId',
         }
         JWT.sign(payload, secret, options, (error,token)=>{
             if(error) reject(error);

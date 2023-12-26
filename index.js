@@ -4,7 +4,11 @@ require('dotenv').config()
 
 const app = express();
 var corOptions ={
-    origin: 'http://localhost:4001'
+    origin: 'http://localhost:3000',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    optionsSuccessStatus: 204,
+    allowHeaders: 'Authorization,Content-Type',
+    credentials: true  // Add this line if you are using credentials (e.g., cookies)
 }
 
 app.use(cors(corOptions));
